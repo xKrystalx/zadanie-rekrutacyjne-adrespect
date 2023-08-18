@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .slide-from-bottom {
+    @apply animate-load:translate-y-0 animate-load:opacity-100 translate-y-full opacity-0 transition-all duration-700 ease-out;
+  }
+
+  .slide-from-right {
+    @apply animate-load:translate-x-0 animate-load:opacity-100 translate-x-full opacity-0 transition-all duration-700 ease-out;
+  }
+
+  .slide-from-left {
+    @apply animate-load:translate-x-0 animate-load:opacity-100 -translate-x-full opacity-0 transition-all duration-700 ease-out;
+  }
+
+  .slide-from-top {
+    @apply animate-load:translate-y-0 animate-load:opacity-100 -translate-y-full opacity-0 transition-all duration-700 ease-out;
+  }
+}

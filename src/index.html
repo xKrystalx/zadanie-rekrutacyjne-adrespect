@@ -1,0 +1,603 @@
+<!doctype html>
+<html class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/dist/output.css" />
+    <link rel="stylesheet" href="./fonts/inter/inter.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/flickity@2/dist/flickity.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+  </head>
+  <body
+    class="transition[opacity] font-sans text-[#111111] opacity-0 duration-[1.5s] ease-out"
+    onload="document.body.style.opacity='1'"
+  >
+    <header
+      id="nav"
+      class="relative z-[2] flex w-full snap-center items-center px-5 py-6 md:px-12"
+    >
+      <img src="./images/giarddesign.svg" class="mr-auto" />
+      <div
+        id="menu-wrapper"
+        class="ml-auto flex items-center text-base max-sm:hidden sm:gap-x-5 xl:gap-x-12"
+      >
+        <div id="offer-menu-wrapper" class="relative">
+          <button
+            class="relative flex items-center gap-x-1.5 ease-out before:absolute before:bottom-0 before:right-0 before:h-[1px] before:w-0 before:bg-black before:transition-all before:duration-[300ms] hover:before:left-0 hover:before:w-full"
+            onclick="animateFieldById('menu', 'animate', true), animateField(this, 'animate', true)"
+          >
+            Oferta<img
+              src="./images/Icon_arrow_down.svg"
+              data-animate="false"
+              class="animate:rotate-0 -rotate-90 transition delay-75 duration-200 ease-out"
+            />
+          </button>
+          <div
+            id="menu"
+            data-animate="false"
+            class="transition[height] transition[visibility, opacity] animate:visible animate:scale-100 animate:opacity-100 invisible absolute right-0 top-8 grid scale-95 overflow-hidden rounded-md bg-white py-2 text-sm font-light opacity-0 ring-1 ring-black ring-opacity-5 delay-75 duration-100"
+          >
+            <a
+              href="#projects"
+              data-animate="false"
+              class="animate:visible animate:translate-y-0 animate:opacity-100 invisible -translate-y-3 bg-white px-4 py-2 opacity-0 transition-[opacity,transform,visibility] delay-[150ms] duration-100 ease-out hover:bg-slate-100"
+              id="menu-item-0"
+              >Projekty</a
+            >
+            <a
+              href="#projects"
+              data-animate="false"
+              class="animate:visible animate:translate-y-0 animate:opacity-100 invisible -translate-y-3 bg-white px-4 py-2 opacity-0 transition-[opacity,transform,visibility] delay-[300ms] duration-100 ease-out hover:bg-slate-100"
+              id="menu-item-0"
+              >Wizualizacje
+            </a>
+            <a
+              href="#projects"
+              data-animate="false"
+              class="animate:visible animate:translate-y-0 animate:opacity-100 invisible -translate-y-3 bg-white px-4 py-2 opacity-0 transition-[opacity,transform,visibility] delay-[450ms] duration-100 ease-out hover:bg-slate-100"
+              id="menu-item-0"
+              >Realizacje</a
+            >
+          </div>
+        </div>
+        <a
+          href="#about"
+          class="relative ease-out before:absolute before:bottom-0 before:right-0 before:h-[1px] before:w-0 before:bg-black before:transition-all before:duration-[300ms] hover:before:left-0 hover:before:w-full"
+          >O firmie</a
+        >
+        <a
+          href="#projects"
+          class="relative ease-out before:absolute before:bottom-0 before:right-0 before:h-[1px] before:w-0 before:bg-black before:transition-all before:duration-[300ms] hover:before:left-0 hover:before:w-full"
+          >Realizacje</a
+        >
+        <a
+          href="#contact"
+          class="relative ease-out before:absolute before:bottom-0 before:right-0 before:h-[1px] before:w-0 before:bg-black before:transition-all before:duration-[300ms] hover:before:left-0 hover:before:w-full"
+          >Kontakt</a
+        >
+        <div
+          id="search-wrapper"
+          data-animate="false"
+          class="animate:border-slate-500 flex rounded-full border-[1px] border-transparent px-2 py-1 align-middle transition delay-75 duration-1000 ease-out"
+        >
+          <input
+            type="text"
+            id="search-field"
+            data-animate="false"
+            class="animate:ml-2 animate:mr-2 xl:animate:w-44 md:animate:w-32 sm:animate:w-24 w-0 outline-none transition-all delay-75 duration-1000 ease-out"
+          />
+          <buttons
+            id="search-button"
+            class="animate:scale-[0.8] flex-shrink-0 scale-100 transition-all delay-75 duration-[500ms]"
+            data-animate="false"
+            onclick="animateFieldById('search-wrapper', 'animate', true)"
+          >
+            <img src="./images/icon_search.svg" />
+          </buttons>
+        </div>
+      </div>
+    </header>
+    <section id="intro" class="relative z-[1]">
+      <div class="intro-carousel">
+        <div
+          id="intro-wrapper"
+          data-animateload="false"
+          data-observethreshold="0.1"
+          class="observable flex w-full flex-col justify-items-center gap-y-8 bg-[#DCC1AB] lg:grid lg:grid-cols-2 lg:gap-x-16 xl:h-[50vw] xl:gap-y-0"
+        >
+          <div
+            id="intro-text-wrapper"
+            data-animateload="false"
+            class="max-lg:slide-from-bottom lg:slide-from-left order-2 mb-8 flex w-full flex-col justify-center gap-y-[72px] px-5 max-lg:delay-[300ms] lg:-order-1 lg:mb-0 xl:w-[599px]"
+          >
+            <div class="flex flex-col justify-center gap-y-11">
+              <p
+                class="font-montserrat text-4xl font-medium leading-[1.15] lg:text-5xl xl:text-6xl"
+              >
+                Nowoczesna aranżacja <br />Twojego ogrodu
+              </p>
+              <p class="lg:w-3/4">
+                Marka GiardDesign to wieloletnie doświadczenie i wysoka estetyka
+                realizacji. Oferujemy kompleksowy zakres usług z indywidualnym
+                podejściem do każdego projektu.
+              </p>
+            </div>
+            <div
+              id="intro-button-wrapper"
+              class="flex flex-col gap-x-9 gap-y-4 xl:flex-row xl:items-center"
+            >
+              <a href="#contact">
+                <button
+                  class="flex-shrink-0 scale-100 rounded-full border-[1px] border-[#1B5B31] bg-[#1B5B31] px-6 py-3 text-[#F5F0EC] transition delay-75 duration-200 hover:border-[#277241] hover:bg-[#277241]"
+                >
+                  Skontaktuj się z nami
+                </button>
+              </a>
+              <a href="#projects">
+                <button
+                  class="flex flex-shrink-0 flex-nowrap items-center gap-x-2 rounded-full border-[1px] border-[#1B5B31] px-6 py-3 text-[#1B5B31] transition delay-75 duration-200 hover:translate-y-2"
+                >
+                  <p class="flex-shrink-0">Zobacz nasze realizacje</p>
+                  <img
+                    src="./images/arrow_down.svg"
+                    class="object-scale-down"
+                  />
+                </button>
+              </a>
+            </div>
+          </div>
+          <div
+            id="intro-image-wrapper"
+            data-animateload="false"
+            class="max-lg:slide-from-top lg:slide-from-right flex h-[400px] items-center justify-center justify-self-end overflow-y-hidden lg:h-auto xl:delay-[300ms]"
+          >
+            <img
+              src="./images/intro/intro-lg.jpg"
+              class="w-full -scale-x-100"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        id="intro-controls"
+        class="absolute bottom-0 right-0 hidden bg-[#F5F0EC] px-8 py-6 xl:visible"
+      >
+        <div class="flex items-center gap-x-8">
+          <button
+            class="flex h-12 w-12 p-2"
+            onclick="previousSlide(true, false)"
+          >
+            <img src="./images/arrow-down-black.svg" class="rotate-90" />
+          </button>
+          <button class="flex h-12 w-12 p-2" onclick="nextSlide(true, false)">
+            <img src="./images/arrow-down-black.svg" class="-rotate-90" />
+          </button>
+        </div>
+      </div>
+    </section>
+    <section id="offer">
+      <div
+        id="offer-wrapper"
+        class="flex flex-col items-center justify-center gap-y-16 overflow-hidden bg-[#F5F0EC] pb-16 pt-8 xl:gap-y-24 xl:pb-40 xl:pt-[120px]"
+      >
+        <div
+          class="observable overflow-hidden"
+          data-animate="false"
+          data-animateload="false"
+          data-observethreshold="0.5"
+        >
+          <div
+            id="offer-text-wrapper"
+            data-animateload="false"
+            class="slide-from-top flex flex-col items-start justify-start gap-y-4 px-5 lg:w-[1040px] xl:px-0"
+          >
+            <p class="text-xs text-[#1B5B31]">Oferta</p>
+            <div
+              class="flex flex-col items-start justify-start gap-y-8 lg:w-[709px]"
+            >
+              <p class="font-montserrat text-4xl font-medium xl:text-5xl">
+                Działamy <span class="italic">kompleksowo</span>
+              </p>
+              <p class="">
+                Oferujemy kompletną obsługę inwestycji terenów zielonych.
+                Projektujemy nowoczesne ogrody przydomowe oraz rezydencjonalne.
+                Stworzymy dla Ciebie projekt, zwizualizujemy go i wcielimy w
+                życie, a na każdym etapie posłużymy radą i wieloletnim
+                doświadczeniem.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="observable overflow-hidden"
+          data-animate="false"
+          data-animateload="false"
+          data-observethreshold="0.20"
+        >
+          <div
+            id="offer-cards-wrapper"
+            class="flex flex-col items-center gap-12 lg:flex-row lg:gap-6 xl:gap-16 xl:px-[88px]"
+          >
+            <div
+              data-animateload="false"
+              class="card slide-from-bottom h-[370px] w-[330px] delay-[0ms] xl:h-[370px] xl:w-[378px]"
+            >
+              <div
+                class="flex h-full w-full flex-col rounded-2xl bg-white p-10 delay-0 duration-[500ms] ease-out hover:bg-[#1B5B31] [&:hover>div>img]:invert [&:hover_*]:brightness-[10.0]"
+              >
+                <div class="flex flex-col gap-y-8">
+                  <img src="./images/offer/card-1.png" class="w-10" />
+                  <div class="flex flex-col gap-y-3">
+                    <p class="font-montserrat text-[28px] font-medium">
+                      Projekty
+                    </p>
+                    <p class="text-[14px]">
+                      Zaprojektujemy Twój ogród w nowoczesnym stylu i z
+                      najlepszym wykorzystaniem istniejącej przestrzeni.
+                    </p>
+                  </div>
+                </div>
+                <a
+                  href="#projects"
+                  class="mt-auto flex w-fit gap-x-[10px] whitespace-nowrap border-b-[1px] border-[#1B5B31] pb-1 text-[#1B5B31]"
+                  >Dowiedz się więcej<img
+                    src="./images/arrow-right.svg"
+                    class="object-scale-down"
+                /></a>
+              </div>
+            </div>
+            <div
+              data-animateload="false"
+              class="card slide-from-bottom h-[370px] w-[330px] delay-[250ms] xl:h-[370px] xl:w-[378px]"
+            >
+              <div
+                class="flex h-full w-full flex-col rounded-2xl bg-white p-10 delay-0 duration-[500ms] ease-out hover:bg-[#1B5B31] [&:hover>div>img]:invert [&:hover_*]:brightness-[10.0]"
+              >
+                <div class="flex flex-col gap-y-8">
+                  <img
+                    src="./images/offer/card-2.png"
+                    class="h-10 w-12 object-contain"
+                  />
+                  <div class="flex flex-col gap-y-3">
+                    <p class="font-montserrat text-[28px] font-medium">
+                      Wizualizacje
+                    </p>
+                    <p class="text-[14px]">
+                      Przedstawimy Ci projekty koncepcyjne w postaci wirtualnego
+                      spaceru animowanego w technologii 3D.
+                    </p>
+                  </div>
+                </div>
+                <a
+                  href="#projects"
+                  class="mt-auto flex w-fit gap-x-[10px] whitespace-nowrap border-b-[1px] border-[#1B5B31] pb-1 text-[#1B5B31]"
+                  >Dowiedz się więcej<img
+                    src="./images/arrow-right.svg"
+                    class="object-scale-down"
+                /></a>
+              </div>
+            </div>
+            <div
+              data-animateload="false"
+              class="card slide-from-bottom h-[370px] w-[330px] delay-[500ms] xl:h-[370px] xl:w-[378px]"
+            >
+              <div
+                class="flex h-full w-full flex-col rounded-2xl bg-white p-10 delay-0 duration-[500ms] ease-out hover:bg-[#1B5B31] [&:hover>div>img]:invert [&:hover_*]:brightness-[10.0]"
+              >
+                <div class="flex flex-col gap-y-8">
+                  <img src="./images/offer/card-3.png" class="w-11" />
+                  <div class="flex flex-col gap-y-3">
+                    <p class="font-montserrat text-[28px] font-medium">
+                      Realizacje
+                    </p>
+                    <p class="text-[14px]">
+                      Zrealizujemy Twoje marzenie przy użyciu najnowszych
+                      rozwiązań i zaawansowanych technologii.
+                    </p>
+                  </div>
+                </div>
+                <a
+                  href="#projects"
+                  class="mt-auto flex w-fit gap-x-[10px] whitespace-nowrap border-b-[1px] border-[#1B5B31] pb-1 text-[#1B5B31]"
+                  >Zobacz nasze realizacje<img
+                    src="./images/arrow-right.svg"
+                    class="object-scale-down"
+                /></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="about">
+      <div
+        id="about-wrapper"
+        data-animateload="false"
+        data-observethreshold="0.25"
+        class="observable flex flex-col justify-items-center overflow-hidden bg-[#1B5B31] lg:grid lg:grid-cols-2 xl:h-[50vw] xl:gap-16"
+      >
+        <div
+          id="about-image-wrapper"
+          data-animateload="false"
+          class="lg:slide-from-bottom max-lg:slide-from-top flex h-[400px] justify-self-end lg:h-auto"
+        >
+          <img
+            src="./images/about/about-lg.jpg"
+            class="w-full -scale-x-100 object-cover"
+          />
+        </div>
+        <div
+          id="about-text-wrapper"
+          data-animateload="false"
+          class="max-lg:slide-from-bottom lg:slide-from-right flex flex-col justify-center gap-y-[72px] px-5 py-8 text-[#F5F0EC] delay-[300ms] lg:py-16 xl:w-[596px] xl:p-0"
+        >
+          <div class="flex flex-col justify-center gap-y-10">
+            <p class="text-xs">O firmie</p>
+            <p class="font-montserrat text-5xl font-medium leading-[1.15]">
+              Tworzymy <br />z <span class="italic">pasją</span>
+            </p>
+            <p class="">
+              Każdy projekt to nowe wyzwanie. Dlatego nasz zespół tworzą
+              wykwalifikowani projektanci oraz architekci, których zadaniem jest
+              rozpoznanie i realizacja potrzeb każdego Klienta. Nasza
+              specjalizacja to przestrzenie nowoczesne, które charakteryzuje
+              minimalizm, geometria i elegancka prostota. Tworzymy ogrody
+              małoobsługowe, dostosowane do współczesnego trybu życia.
+            </p>
+          </div>
+          <button
+            class="flex w-fit items-center gap-x-2 rounded-full border-[1px] border-[#F5F0EC] px-5 py-3 transition-colors delay-75 duration-300 hover:bg-[#F5F0EC] hover:text-[#1B5B31] [&:hover>img]:brightness-[30%] [&:hover>img]:grayscale [&:hover>img]:transition [&:hover>img]:delay-75 [&:hover>img]:duration-300"
+          >
+            Poznaj nas bliżej<img
+              src="./images/arrow-right-grey.svg"
+              class="flex-shrink-0"
+            />
+          </button>
+        </div>
+      </div>
+    </section>
+    <section id="projects">
+      <div
+        id="projects-wrapper"
+        data-animateload="false"
+        data-observethreshold="0.1"
+        class="observable relative overflow-hidden bg-[#DCC1AB] pb-10"
+      >
+        <div class="flex justify-center">
+          <div
+            data-animateload="false"
+            class="slide-from-top my-16 flex w-full flex-col gap-y-4 pl-5 xl:my-0 xl:mb-24 xl:mt-[120px] xl:pl-48"
+          >
+            <p class="text-[#1B5B31]">Realizacje</p>
+            <p class="font-montserrat text-5xl font-medium">
+              Nasze <span class="italic">projekty</span>
+            </p>
+          </div>
+        </div>
+        <!-- Arbitrally large, but what can you do. Nice transition only with huge max-height (to my knowledge) Adjust as needed i suppose -->
+        <div
+          id="projects-masonry-container"
+          class="transition[max-height] animate:max-h-[2986px] slide-from-bottom mb-16 max-h-[1475px] overflow-hidden delay-75 duration-[1.25s] ease-in-out"
+          data-animate="false"
+          data-animateload="false"
+        >
+          <div
+            id="projects-masonry"
+            class="masonry-grid photoswipe-gallery mx-auto"
+          >
+            <div class="masonry-grid-gutter w-[3.33%]"></div>
+            <div class="masonry-grid-sizer w-[30%]"></div>
+            <a href="./images/projects/photo-1.png" data-fslightbox="gallery">
+              <img
+                src="./images/projects/photo-1.png"
+                class="masonry-grid-item mb-10"
+              />
+            </a>
+            <a href="./images/projects/photo-2.png" data-fslightbox="gallery">
+              <img
+                src="./images/projects/photo-2.png"
+                class="masonry-grid-item mb-10"
+              />
+            </a>
+            <a href="./images/projects/photo-3.png" data-fslightbox="gallery">
+              <img
+                src="./images/projects/photo-3.png"
+                class="masonry-grid-item mb-10"
+            /></a>
+            <a href="./images/projects/photo-4.png" data-fslightbox="gallery">
+              <img
+                src="./images/projects/photo-4.png"
+                class="masonry-grid-item mb-10"
+            /></a>
+            <a href="./images/projects/photo-5.png" data-fslightbox="gallery">
+              <img
+                src="./images/projects/photo-5.png"
+                class="masonry-grid-item mb-10"
+            /></a>
+            <a href="./images/projects/photo-6.png" data-fslightbox="gallery">
+              <img
+                src="./images/projects/photo-6.png"
+                class="masonry-grid-item mb-10"
+            /></a>
+            <a href="./images/projects/photo-1.png" data-fslightbox="gallery">
+              <img
+                src="./images/projects/photo-1.png"
+                class="masonry-grid-item mb-10"
+              />
+            </a>
+            <a href="./images/projects/photo-2.png" data-fslightbox="gallery">
+              <img
+                src="./images/projects/photo-2.png"
+                class="masonry-grid-item mb-10"
+              />
+            </a>
+            <a href="./images/projects/photo-3.png" data-fslightbox="gallery">
+              <img
+                src="./images/projects/photo-3.png"
+                class="masonry-grid-item mb-10"
+            /></a>
+            <a href="./images/projects/photo-4.png" data-fslightbox="gallery">
+              <img
+                src="./images/projects/photo-4.png"
+                class="masonry-grid-item mb-10"
+            /></a>
+            <a href="./images/projects/photo-5.png" data-fslightbox="gallery">
+              <img
+                src="./images/projects/photo-5.png"
+                class="masonry-grid-item mb-10"
+            /></a>
+            <a href="./images/projects/photo-6.png" data-fslightbox="gallery">
+              <img
+                src="./images/projects/photo-6.png"
+                class="masonry-grid-item mb-10"
+            /></a>
+          </div>
+        </div>
+        <div
+          id="projects-show-more"
+          data-animate="false"
+          class="transition[opacity] animate:invisible animate:opacity-0 pointer-events-none visible absolute bottom-0 flex h-[1200px] w-full items-end justify-center bg-gradient-to-b from-transparent to-[#DCC1AB] opacity-100 delay-75 duration-[1s] ease-out"
+        >
+          <button
+            class="pointer-events-auto mb-16 flex items-center gap-x-2 rounded-full border-[1px] border-black px-[22px] py-3 transition delay-75 duration-300 ease-out hover:border-white hover:bg-white hover:invert"
+            onclick="expandMasonryById('projects-show-more', 'projects-masonry-container')"
+          >
+            Rozwiń<img src="./images/arrow-down-black.svg" />
+          </button>
+        </div>
+      </div>
+    </section>
+    <section id="contact">
+      <div
+        id="contact-wrapper"
+        class="flex justify-center bg-[#F5F0EC] xl:py-[60px]"
+      >
+        <div
+          id="contact-box"
+          data-animateload="false"
+          data-observethreshold="0.5"
+          class="observable flex w-full flex-col gap-12 overflow-hidden bg-[#1B5B31] px-5 py-8 text-[#F5F0EC] xl:w-[1040px] xl:flex-row xl:items-center xl:gap-16 xl:px-[110px] xl:py-[120px]"
+        >
+          <div
+            class="slide-from-bottom text-[40px] leading-[1.2] delay-[150ms]"
+            data-animateload="false"
+          >
+            <p>
+              Zostańmy w kontakcie!<br />Znajdziesz nas na
+              <span class="font-medium italic">Instagramie</span>.
+            </p>
+          </div>
+          <div class="flex flex-col justify-center gap-y-6 overflow-hidden">
+            <div
+              data-animateload="false"
+              class="slide-from-bottom overflow-hidden delay-[400ms]"
+            >
+              <p>
+                Śledź nasze <br />
+                najnowsze realizacje!
+              </p>
+            </div>
+            <button
+              data-animateload="false"
+              class="slide-from-bottom w-fit rounded-full bg-[#F5F0EC] px-6 py-[10px] text-[#1B5B31] delay-[600ms]"
+            >
+              Instagram
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer id="footer">
+      <div
+        id="footer-flex-container"
+        data-animateload="false"
+        class="observable flex items-center justify-center overflow-hidden bg-black py-20"
+      >
+        <div
+          id="footer-wrapper"
+          data-animateload="false"
+          class="slide-from-bottom flex w-full flex-col justify-center gap-y-20 px-5 text-[#F5F0EC] lg:gap-y-[120px] xl:w-[1040px] xl:px-0"
+        >
+          <div id="footer-contact" class="flex flex-col gap-y-16">
+            <div
+              class="flex flex-col items-start gap-y-6 lg:flex-row lg:items-center lg:gap-0"
+            >
+              <img
+                src="./images/giarddesign.svg"
+                alt=""
+                class="invert lg:mr-auto"
+              />
+              <div
+                class="flex flex-col items-start gap-6 lg:ml-auto lg:flex-row lg:items-center"
+              >
+                <p>Daj znać, co możemy dla Ciebie zrobić!</p>
+                <button
+                  class="rounded-full border-[1px] border-[#1B5B31] bg-[#1B5B31] px-6 py-3 text-[#F5F0EC] transition delay-75 duration-200 hover:border-[#277241] hover:bg-[#277241]"
+                >
+                  Skontaktuj się z nami
+                </button>
+              </div>
+            </div>
+            <hr class="h-[1px] text-[#F5F0EC]" />
+            <div class="flex flex-col gap-y-8 lg:flex-row lg:items-center">
+              <div
+                class="flex items-center gap-x-4 gap-y-2 lg:mr-auto lg:flex-row lg:gap-x-12"
+              >
+                <a
+                  href="#"
+                  class="relative underline underline-offset-[6px] ease-out before:absolute before:bottom-0 before:right-0 before:h-[1px] before:w-0 before:bg-[#F5F0EC] before:transition-all before:duration-[300ms] hover:before:left-0 hover:before:w-full lg:no-underline"
+                  >Kontakt</a
+                >
+                <a
+                  href="#"
+                  class="relative underline underline-offset-[6px] ease-out before:absolute before:bottom-0 before:right-0 before:h-[1px] before:w-0 before:bg-[#F5F0EC] before:transition-all before:duration-[300ms] hover:before:left-0 hover:before:w-full lg:no-underline"
+                  >Instagram</a
+                >
+                <a
+                  href="#"
+                  class="relative underline underline-offset-[6px] ease-out before:absolute before:bottom-0 before:right-0 before:h-[1px] before:w-0 before:bg-[#F5F0EC] before:transition-all before:duration-[300ms] hover:before:left-0 hover:before:w-full lg:no-underline"
+                  >Facebook</a
+                >
+                <a
+                  href="#"
+                  class="relative underline underline-offset-[6px] ease-out before:absolute before:bottom-0 before:right-0 before:h-[1px] before:w-0 before:bg-[#F5F0EC] before:transition-all before:duration-[300ms] hover:before:left-0 hover:before:w-full lg:no-underline"
+                  >LinkedIn</a
+                >
+              </div>
+              <div
+                class="flex flex-col gap-x-12 gap-y-1 lg:ml-auto lg:flex-row lg:items-center"
+              >
+                <p>000-000-000</p>
+                <a href="#">giaradesign@kontakt.pl</a>
+              </div>
+            </div>
+          </div>
+          <div id="footer-copyright" class="flex items-center">
+            <p class="mr-auto">Prawa zastrzeżone @ 2022</p>
+            <div class="ml-auto flex items-center gap-x-4">
+              <p>made by</p>
+              <img src="./images/logo-full-light.svg" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+  <script src="./js/index.js"></script>
+  <script src="./js/masonry.js"></script>
+  <script src="./js/flickity.js"></script>
+  <script src="./js/gallery/fslightbox.js"></script>
+</html>
