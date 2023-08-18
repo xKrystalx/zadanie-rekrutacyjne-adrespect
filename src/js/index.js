@@ -51,7 +51,6 @@ function expandMasonryById(triggeringContainerId, containerToExpandId) {
 window.addEventListener(
   "load",
   (event) => {
-    console.log("load");
     let observables = document.querySelectorAll(".observable");
     let thresholds = [];
     observables.forEach((observable) => {
@@ -77,7 +76,6 @@ function createObserver(thresholds = [0.5]) {
   return new IntersectionObserver(
     (entries, observer) => {
       entries.forEach((entry) => {
-        console.log(`Maybe visible ${entry.target}`);
         if (!entry.isIntersecting) {
           return;
         }
