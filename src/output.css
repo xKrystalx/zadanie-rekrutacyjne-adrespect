@@ -1214,6 +1214,18 @@ video {
   line-height: 1.2;
 }
 
+.-tracking-widest {
+  letter-spacing: -0.1em;
+}
+
+.tracking-\[-2px\] {
+  letter-spacing: -2px;
+}
+
+.tracking-\[1px\] {
+  letter-spacing: 1px;
+}
+
 .text-\[\#111111\] {
   --tw-text-opacity: 1;
   color: rgb(17 17 17 / var(--tw-text-opacity));
