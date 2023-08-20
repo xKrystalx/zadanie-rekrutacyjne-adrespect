@@ -2,9 +2,5 @@
   "devDependencies": {
     "prettier": "3.0.2",
     "prettier-plugin-tailwindcss": "^0.5.3"
-  },
-  "dependencies": {
-    "photoswipe": "^5.3.8",
-    "serve": "^14.2.0"
   }
 }

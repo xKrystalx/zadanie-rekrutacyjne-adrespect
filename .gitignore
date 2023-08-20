@@ -1,6 +1,4 @@
 #ignore basic folders
 .vscode
 node_modules
-.prettierignore
-.prettierrc
 dist
