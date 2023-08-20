@@ -42,32 +42,32 @@
             Oferta<img
               src="./images/Icon_arrow_down.svg"
               data-animate="false"
-              class="animate:rotate-0 -rotate-90 transition delay-75 duration-200 ease-out"
+              class="-rotate-90 transition delay-75 duration-200 ease-out animate:rotate-0"
             />
           </button>
           <div
             id="menu"
             data-animate="false"
-            class="transition[height] transition[visibility, opacity] animate:visible animate:scale-100 animate:opacity-100 invisible absolute right-0 top-8 grid scale-95 overflow-hidden rounded-md bg-white py-2 text-sm font-light opacity-0 ring-1 ring-black ring-opacity-5 delay-75 duration-100"
+            class="transition[height] transition[visibility, opacity] invisible absolute right-0 top-8 grid scale-95 overflow-hidden rounded-md bg-white py-2 text-sm font-light opacity-0 ring-1 ring-black ring-opacity-5 delay-75 duration-100 animate:visible animate:scale-100 animate:opacity-100"
           >
             <a
               href="#projects"
               data-animate="false"
-              class="animate:visible animate:translate-y-0 animate:opacity-100 invisible -translate-y-3 bg-white px-4 py-2 opacity-0 transition-[opacity,transform,visibility] delay-[150ms] duration-100 ease-out hover:bg-slate-100"
+              class="invisible -translate-y-3 bg-white px-4 py-2 opacity-0 transition-[opacity,transform,visibility] delay-[150ms] duration-100 ease-out hover:bg-slate-100 animate:visible animate:translate-y-0 animate:opacity-100"
               id="menu-item-0"
               >Projekty</a
             >
             <a
               href="#projects"
               data-animate="false"
-              class="animate:visible animate:translate-y-0 animate:opacity-100 invisible -translate-y-3 bg-white px-4 py-2 opacity-0 transition-[opacity,transform,visibility] delay-[300ms] duration-100 ease-out hover:bg-slate-100"
+              class="invisible -translate-y-3 bg-white px-4 py-2 opacity-0 transition-[opacity,transform,visibility] delay-[300ms] duration-100 ease-out hover:bg-slate-100 animate:visible animate:translate-y-0 animate:opacity-100"
               id="menu-item-0"
               >Wizualizacje
             </a>
             <a
               href="#projects"
               data-animate="false"
-              class="animate:visible animate:translate-y-0 animate:opacity-100 invisible -translate-y-3 bg-white px-4 py-2 opacity-0 transition-[opacity,transform,visibility] delay-[450ms] duration-100 ease-out hover:bg-slate-100"
+              class="invisible -translate-y-3 bg-white px-4 py-2 opacity-0 transition-[opacity,transform,visibility] delay-[450ms] duration-100 ease-out hover:bg-slate-100 animate:visible animate:translate-y-0 animate:opacity-100"
               id="menu-item-0"
               >Realizacje</a
             >
@@ -91,17 +91,17 @@
         <div
           id="search-wrapper"
           data-animate="false"
-          class="animate:border-slate-500 flex rounded-full border-[1px] border-transparent px-2 py-1 align-middle transition delay-75 duration-1000 ease-out"
+          class="flex rounded-full border-[1px] border-transparent px-2 py-1 align-middle transition delay-75 duration-1000 ease-out animate:border-slate-500"
         >
           <input
             type="text"
             id="search-field"
             data-animate="false"
-            class="animate:ml-2 animate:mr-2 xl:animate:w-44 md:animate:w-32 sm:animate:w-24 w-0 outline-none transition-all delay-75 duration-1000 ease-out"
+            class="w-0 outline-none transition-all delay-75 duration-1000 ease-out animate:ml-2 animate:mr-2 sm:animate:w-24 md:animate:w-32 xl:animate:w-44"
           />
           <buttons
             id="search-button"
-            class="animate:scale-[0.8] flex-shrink-0 scale-100 transition-all delay-75 duration-[500ms]"
+            class="flex-shrink-0 scale-100 transition-all delay-75 duration-[500ms] animate:scale-[0.8]"
             data-animate="false"
             onclick="animateFieldById('search-wrapper', 'animate', true)"
           >
@@ -125,14 +125,15 @@
           >
             <div class="flex flex-col justify-center gap-y-11">
               <p
-                class="font-montserrat text-4xl font-medium leading-[1.15] lg:text-5xl xl:text-6xl"
+                class="font-montserrat text-4xl font-medium leading-[1.17] lg:text-5xl xl:text-6xl"
               >
-                Nowoczesna aranżacja <br />Twojego ogrodu
+                Nowoczesna aranżacja Twojego ogrodu
               </p>
-              <p class="lg:w-3/4">
+              <p class="leading-6 lg:w-[489px]">
                 Marka GiardDesign to wieloletnie doświadczenie i wysoka estetyka
-                realizacji. Oferujemy kompleksowy zakres usług z indywidualnym
-                podejściem do każdego projektu.
+                realizacji. Oferujemy kompleksowy zakres usług
+                <br class="hidden lg:block" />z indywidualnym podejściem do
+                każdego projektu.
               </p>
             </div>
             <div
@@ -170,10 +171,65 @@
             />
           </div>
         </div>
+        <div
+          id="intro-wrapper"
+          class="observable flex w-full flex-col justify-items-center gap-y-8 bg-[#DCC1AB] lg:grid lg:grid-cols-2 lg:gap-x-16 xl:h-[50vw] xl:gap-y-0"
+        >
+          <div
+            id="intro-text-wrapper"
+            class="order-2 mb-8 flex w-full flex-col justify-center gap-y-[72px] px-5 max-lg:delay-[300ms] lg:-order-1 lg:mb-0 xl:w-[599px]"
+          >
+            <div class="flex flex-col justify-center gap-y-11">
+              <p
+                class="font-montserrat text-4xl font-medium leading-[1.17] lg:text-5xl xl:text-6xl"
+              >
+                Nowoczesna aranżacja Twojego ogrodu
+              </p>
+              <p class="leading-6 lg:w-[489px]">
+                Marka GiardDesign to wieloletnie doświadczenie i wysoka estetyka
+                realizacji. Oferujemy kompleksowy zakres usług
+                <br class="hidden lg:block" />z indywidualnym podejściem do
+                każdego projektu.
+              </p>
+            </div>
+            <div
+              id="intro-button-wrapper"
+              class="flex flex-col gap-x-9 gap-y-4 xl:flex-row xl:items-center"
+            >
+              <a href="#contact">
+                <button
+                  class="flex-shrink-0 scale-100 rounded-full border-[1px] border-[#1B5B31] bg-[#1B5B31] px-6 py-3 text-[#F5F0EC] transition delay-75 duration-200 hover:border-[#277241] hover:bg-[#277241]"
+                >
+                  Skontaktuj się z nami
+                </button>
+              </a>
+              <a href="#projects">
+                <button
+                  class="flex flex-shrink-0 flex-nowrap items-center gap-x-2 rounded-full border-[1px] border-[#1B5B31] px-6 py-3 text-[#1B5B31] transition delay-75 duration-200 hover:translate-y-2"
+                >
+                  <p class="flex-shrink-0">Zobacz nasze realizacje</p>
+                  <img
+                    src="./images/arrow_down.svg"
+                    class="object-scale-down"
+                  />
+                </button>
+              </a>
+            </div>
+          </div>
+          <div
+            id="intro-image-wrapper"
+            class="flex h-[400px] items-center justify-center justify-self-end overflow-y-hidden lg:h-auto xl:delay-[300ms]"
+          >
+            <img
+              src="./images/intro/intro-lg.jpg"
+              class="w-full -scale-x-100"
+            />
+          </div>
+        </div>
       </div>
       <div
         id="intro-controls"
-        class="absolute bottom-0 right-0 hidden bg-[#F5F0EC] px-8 py-6 xl:visible"
+        class="absolute bottom-0 right-0 hidden bg-[#F5F0EC] px-8 py-5 lg:block"
       >
         <div class="flex items-center gap-x-8">
           <button
@@ -392,7 +448,7 @@
         <!-- Arbitrally large, but what can you do. Nice transition only with huge max-height (to my knowledge) Adjust as needed i suppose -->
         <div
           id="projects-masonry-container"
-          class="transition[max-height] animate:max-h-[2986px] slide-from-bottom mb-16 max-h-[1475px] overflow-hidden delay-75 duration-[1.25s] ease-in-out"
+          class="transition[max-height] slide-from-bottom mb-16 max-h-[1475px] overflow-hidden delay-75 duration-[1.25s] ease-in-out animate:max-h-[2986px]"
           data-animate="false"
           data-animateload="false"
         >
@@ -471,7 +527,7 @@
         <div
           id="projects-show-more"
           data-animate="false"
-          class="transition[opacity] animate:invisible animate:opacity-0 pointer-events-none visible absolute bottom-0 flex h-[1200px] w-full items-end justify-center bg-gradient-to-b from-transparent to-[#DCC1AB] opacity-100 delay-75 duration-[1s] ease-out"
+          class="transition[opacity] pointer-events-none visible absolute bottom-0 flex h-[1200px] w-full items-end justify-center bg-gradient-to-b from-transparent to-[#DCC1AB] opacity-100 delay-75 duration-[1s] ease-out animate:invisible animate:opacity-0"
         >
           <button
             class="pointer-events-auto mb-16 flex items-center gap-x-2 rounded-full border-[1px] border-black px-[22px] py-3 transition delay-75 duration-300 ease-out hover:border-white hover:bg-white hover:invert"

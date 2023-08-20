@@ -1,3 +1,5 @@
+//Initialize the carousel library
+
 var flickity = new Flickity(".intro-carousel", {
   wrapAround: true,
   draggable: true,
@@ -7,7 +9,7 @@ var flickity = new Flickity(".intro-carousel", {
   pageDots: false,
   imagesLoaded: true,
   friction: 0.65,
-  selectedAttraction:0.02
+  selectedAttraction: 0.02,
 });
 
 function nextSlide() {

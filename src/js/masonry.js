@@ -1,3 +1,5 @@
+//Initialize masonry gallery
+
 var masonry = null;
 
 imagesLoaded(".masonry-grid", () => {

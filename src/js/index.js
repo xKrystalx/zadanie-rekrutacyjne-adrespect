@@ -34,25 +34,28 @@ function toggleDatasetAttribute(dataset, attribute) {
 //prettier-ignore
 function expandMasonryById(triggeringContainerId, containerToExpandId) {
 
-  console.log('expand')
-
   let el_TriggeringContainer = document.getElementById(triggeringContainerId);
   let el_ContainerToExpand = document.getElementById(containerToExpandId);
 
+  //Trigger fade out on the button itelf once the expansion ends
   el_ContainerToExpand.addEventListener('transitionend', (event) =>{
     animateField(el_TriggeringContainer, 'animate', false);
   }, {
     once:true
   });
 
+  //Trigger expansion
   animateField(el_ContainerToExpand, 'animate', false);
 }
 
+//Register observables to animate when they come into view
 window.addEventListener(
   "load",
   (event) => {
     let observables = document.querySelectorAll(".observable");
     let thresholds = [];
+
+    //Go through each observable to register different view % thresholds
     observables.forEach((observable) => {
       if (observable.dataset.observethreshold) {
         thresholds.push(observable.dataset.observethreshold);
@@ -80,9 +83,11 @@ function createObserver(thresholds = [0.5]) {
           return;
         }
         //prettier-ignore
+        //If the observable is visible enough per its threshold setting
         if ( entry.target.dataset.observethreshold !== undefined && entry.intersectionRatio < entry.target.dataset.observethreshold) {
           return;
         }
+        //If done animating
         if (entry.target.dataset.animateload !== "false") {
           return;
         }
